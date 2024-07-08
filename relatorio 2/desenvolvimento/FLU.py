@@ -17,7 +17,7 @@ def flu( matrix: np.array, use_pivot: bool = False ) -> list[np.array, np.array]
     
     for pivot_row in range( size - 1 ):
         if use_pivot:
-            upper_matrix = partial_pivot(upper_matrix, pivot_row)
+            upper_matrix = partial_pivot(matrix, pivot_row)
         for target_row in range( pivot_row + 1, size ):
             multiplier = U[target_row, pivot_row] / U[pivot_row, pivot_row]
             L[target_row, pivot_row] = multiplier
@@ -42,7 +42,7 @@ def print_matrix( matrix: np.array, name: str ) -> None:
 
 A    = np.array( [[1, 1, 1], [2, 1, -1], [2, -1, 1]] )
 B    = np.array( [-2, 1, 3] )
-L, U = flu(A)
+L, U = flu(A, True)
 y    = forward_substitution( L, B )
 x    = backward_substitution( U, y )
 

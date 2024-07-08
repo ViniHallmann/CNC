@@ -15,7 +15,6 @@ def gauss_seidel(matrix: np.array, b_vector: np.array, initial_guess: np.array, 
                 if col != row:
                     sum_values -= matrix[row, col] * current_solution[col]
             current_solution[row] = sum_values / matrix[row, row]
-            print(current_solution[row], matrix[row, row])
         
         if np.linalg.norm(current_solution - initial_guess, np.inf) < tolerance:
             return current_solution

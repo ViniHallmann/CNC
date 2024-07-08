@@ -1,5 +1,4 @@
-#Jacobi
-
+#Gauss-Jacobi
 import numpy as np
 
 def gauss_jacobi( matrix: np.array, b_vector: np.array, initial_guess: np.array, tolerance: float, max_iterations: int ) -> np.array:

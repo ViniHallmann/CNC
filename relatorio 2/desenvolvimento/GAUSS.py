@@ -4,7 +4,7 @@ import numpy as np
 A = np.array([[1.5, 5.4, 3.3],[4.2,2.3,4.5],[2.7,5.7,7.8]])
 B = np.array([[10], [11.7], [8.9]])
     
-def create_concatenated_matrix( A:np.array, B:np.array ) -> np.array: return np.concatenate( ( A,B ), axis=1, dtype=float )
+def create_concatenated_matrix( A:np.array, B:np.array ) -> np.array: return np.concatenate( ( A, B ), axis=1, dtype=float )
 
 def partial_pivoting( matrix ) -> np.array:
     num_equations = len( matrix )
@@ -34,7 +34,7 @@ def backward_substitution( matrix ) -> np.array:
 
 def print_solutions( solutions ) -> None:
     for i, solution in enumerate(solutions):
-        print(f"x{i+1} = {np.round(solution, 3)}")
+        print( f"x{i+1} = {np.round( solution, 3 )}" )
 
 def gauss_elimination( A:np.array, B:np.array, use_pivot:bool = False ) -> np.array:
     concatenated_matrix = create_concatenated_matrix( A, B )

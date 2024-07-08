@@ -1,4 +1,4 @@
-#Cholesky
+#Fatoração Cholesky
 
 import numpy as np
 
